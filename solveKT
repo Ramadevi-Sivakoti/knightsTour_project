@@ -1,0 +1,14 @@
+
+def solveKT(N):
+    sol = [[-1 for x in range(N)] for y in range(N)]
+    xMove = [2, 1, -1, -2, -2, -1, 1, 2]
+    yMove = [1, 2, 2, 1, -1, -2, -2, -1]
+
+    sol[0][0] = 0
+    pos = 1
+    if not solveKTUtil(0, 0, pos, sol, xMove, yMove):
+        print("Solution does not exist")
+        return False
+
+    print_solution(sol)
+    return True
